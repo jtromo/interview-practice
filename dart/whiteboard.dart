@@ -1,6 +1,8 @@
 import 'package:intl/intl.dart';
 
 void main() {
+// https://stackoverflow.com/questions/72176047/debug-current-open-flutter-file-in-vscode
+
 //   DateTime time = DateTime.parse("7/25/2023 12:00:00 AM");
 
 //   var inputFormat = DateFormat('M/d/yyyy hh:mm:ss aaa');
@@ -116,34 +118,30 @@ void main() {
 //   DateTime date = DateTime.now();
 //   print('Start date: ${date.toString()}');
 //   int weekday = date.weekday;
-  
-  
+
 //   DateTime startWeekday = date.subtract(
 //         Duration(days: btWeekdayForIsoWeekday(date.weekday)));
 //   print('startWeekday: ${startWeekday.toString()}');
-  
+
 //   int endWeekDiff = DateTime.saturday - weekday;
 //   DateTime endWeekday = date.add(Duration(days: endWeekDiff));
 //   print('endWeekday: ${endWeekday.toString()}');
-  
+
   // fix water meter date
 //   var x = "2023-07-25T00:00:00.000TZ";
 //   print(x);
-  
+
 // //   var position = x.lastIndexOf("T").clamp(0, x.length);
 // // var x2 = x.replaceFirst("T", "", position);
 // //   print(x2);
-  
+
 //   String replaceCharAt(String oldString, int index, String newChar) {
 //   return oldString.substring(0, index) + newChar + oldString.substring(index + 1);
 // }
 
-  
 //   if (x[x.length-2] == "T") {
 //     x = replaceCharAt(x, x.length-2, "");
 // //     x[x.length-2] = "";
 //     print(x);
 //   }
-  
-  
 }

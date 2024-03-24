@@ -34,12 +34,26 @@ print("  Insert 3 into index 1:")
 numbers.insert(1, 3)
 print(numbers)
 
-print("  len of list:")
-print(len(numbers))
-
 print("  Append 14 to end:")
 numbers.append(14)
 print(numbers)
+
+print("  len of list:")
+print(len(numbers))
+
+x = [1,2,3,4]
+y = [5,6,7,8]
+print("  Append list to end:")
+print(f"x: {x}, y: {y}")
+x.append(y)
+print(x)
+
+x = [1,2,3,4]
+y = [5,6,7,8]
+print("  add elements from list to end:")
+print(f"x: {x}, y: {y}")
+x.extend(y)
+print(x)
 
 print("  len of list:")
 print(len(numbers))
@@ -100,7 +114,7 @@ print(tuple1.count(2))
 print("  index")
 print(tuple1.index(2))
 
-print(f"\n\n=== Slice ===") 
+print(f"\n\n=== Slice ===")
 
 # x[start: stop: step]
 sliceList = [0,1,2,3,4,5,6,7,8,9]

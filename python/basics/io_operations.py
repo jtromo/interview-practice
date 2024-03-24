@@ -18,7 +18,7 @@ print(f"Your result is: {int(one) + int(two)}")
 
 print(f"\n== File ==")
 
-df = pd.read_csv('./resources/usernames.csv')
+df = pd.read_csv('../resources/usernames.csv')
 print(df.to_string())
 
 fig = plt.figure()
