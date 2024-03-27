@@ -38,7 +38,7 @@
 #         self.key = key
 #         self.value = value
 class Solution:
-    def insertionSort(self, pairs: List[Pair]) -> List[List[Pair]]:
+    def insertionSort(self, pairs: list[Pair]) -> list[list[Pair]]:
         # length
         n = len(pairs)
         # steps

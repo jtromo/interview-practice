@@ -1,12 +1,17 @@
-import functions
+def main():
 
-print(functions.add(1, 4))
+    import functions
 
-# from functions import add
-# print(add(1, 4))
+    print(functions.add(1, 4))
 
-import object_oriented
+    # from functions import add
+    # print(add(1, 4))
 
-test_user = object_oriented.User("email", "name", "pass", "title")
+    import object_oriented
 
-test_user.get_user_info()
+    test_user = object_oriented.User("email", "name", "pass", "title")
+
+    test_user.get_user_info()
+
+if __name__ == '__main__':
+  main()

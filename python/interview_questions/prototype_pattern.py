@@ -64,7 +64,7 @@ class Rectangle(Shape):
         return Rectangle(self.width, self.height)
 
 class Test:
-    def clone_shapes(self, shapes: List[Shape]) -> List[Shape]:
+    def clone_shapes(self, shapes: list[Shape]) -> list[Shape]:
         result = []
         for shape in shapes:
             result.append(shape.clone())

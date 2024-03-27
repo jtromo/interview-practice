@@ -69,6 +69,3 @@ class DynamicArray:
 
     def getCapacity(self) -> int:
         return self.capacity
-
-
-
