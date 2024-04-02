@@ -15,12 +15,12 @@ It should return [1,4,8,2,5,9,3,6,7].
 import 'dart:collection';
 
 class ZigzagIterator {
-  DoubleLinkedQueue<ListQueue<int>> queue;
+  late DoubleLinkedQueue<ListQueue<int>> queue;
 
   ZigzagIterator(List<List<int>> lists) {
-    List<ListQueue<int>> queues = lists.fold(new List(), (prev, list) {
-      if (list == null || list.isEmpty) { 
-        return prev; 
+    List<ListQueue<int>> queues = lists.fold([], (prev, list) {
+      if (list.isEmpty) {
+        return prev;
       } else {
         return prev..add(new ListQueue<int>.from(list));
       }
@@ -44,11 +44,11 @@ class ZigzagIterator {
 
 void main() {
   try {
-    var v1 = [1,6,10];
-    var v2 = [2,7];
-    var v3 = [3,8,11,13];
+    var v1 = [1, 6, 10];
+    var v2 = [2, 7];
+    var v3 = [3, 8, 11, 13];
     var v4 = [4];
-    var v5 = [5,9,12];
+    var v5 = [5, 9, 12];
     var solution = [];
     var i = new ZigzagIterator([v1, v2, v3, v4, v5]);
     while (i.hasNext()) {

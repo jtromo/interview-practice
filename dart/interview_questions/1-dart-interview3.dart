@@ -25,7 +25,7 @@
 // Ask if I should begin
 
 void main() {
-  bool bs(List<int> list, int value) {
+  bool bs(List<int>? list, int value) {
     if (list == null || list.isEmpty) return false;
 
     int left = 0;
@@ -45,7 +45,7 @@ void main() {
     return false;
   }
 
-  bool bsRecursive(List<int> list, int left, int right, int value) {
+  bool bsRecursive(List<int>? list, int left, int right, int value) {
     if (list == null || list.isEmpty) return false;
     if (left > right) return false;
 
@@ -64,9 +64,9 @@ void main() {
 
   list = [1, 3, 5, 6, 8, 9];
   print('bs: ${bs(list, 8)}');
-  print('bsRecursive: ${bsRecursive(list, 0, list.length-1, 8)}');
+  print('bsRecursive: ${bsRecursive(list, 0, list.length - 1, 8)}');
 
-  String reverseRecurs(String s) {
+  String reverseRecurs(String? s) {
     if (s == null || s.isEmpty) {
       return '';
     }
@@ -88,7 +88,7 @@ void main() {
   // ~/10 = 123
   int reverseInt(int i) {
     if (i < 10) return i;
-    
+
     int rev = 0;
     while (i != 0) {
       int rightDigit = i % 10;

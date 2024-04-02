@@ -1,5 +1,5 @@
 void main() {
-  String s;
+  String? s;
 
   bool isNumeric(String s) {
     try {
@@ -17,11 +17,11 @@ void main() {
   s = '-123';
   print('isNumeric: ${isNumeric(s)}');
   s = null;
-  print('isNumeric: ${isNumeric(s)}');
+  print('isNumeric: ${isNumeric(s ?? "")}');
   s = '2e10';
   print('isNumeric: ${isNumeric(s)}');
-  
-  bool validParentheses(String s) {
+
+  bool validParentheses(String? s) {
     if (s == null || s.isEmpty) return true;
     int openCurly = 0;
     int openSquare = 0;
@@ -50,18 +50,18 @@ void main() {
         default:
           break;
       }
-      
+
       if ((openCurly < 0) || (openSquare < 0) || (openParen < 0)) {
         return false;
       }
     }
     if ((openCurly != 0) || (openSquare != 0) || (openParen != 0)) {
-        return false;
+      return false;
     }
-    
+
     return true;
   }
-  
+
   s = '';
   print('validParentheses: ${validParentheses(s)}');
   s = null;

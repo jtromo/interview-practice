@@ -3,8 +3,7 @@ import 'dart:collection';
 typedef CheckCycle(int n, List<bool> visited, List<List<int>> edges);
 
 void main() {
-  bool dfsCycleFound(
-      int from, int to, List<bool> visited, List<List<int>> adjacencyList) {
+  bool dfsCycleFound(int from, int to, List<bool> visited, List<List<int>> adjacencyList) {
     if (visited[to]) return true;
     visited[to] = true;
     // Check each edge in adjacency list.
@@ -36,23 +35,21 @@ void main() {
       adjacencyList[edge[0]].add(edge[1]);
       adjacencyList[edge[1]].add(edge[0]);
     }
-    
+
     final queue = new ListQueue<int>.from([0]);
-    while(queue.isNotEmpty) {
+    while (queue.isNotEmpty) {
       int first = queue.removeFirst();
       if (visited[first]) return true;
       visited[first] = true;
-      
+
       for (int index in adjacencyList[first]) {
-        if (index != null) {
-          queue.addLast(index);
-          adjacencyList[index].remove(first);
-        }
+        queue.addLast(index);
+        adjacencyList[index].remove(first);
       }
     }
     return false;
   }
-  
+
   // Determine if contains a cycle.
   bool dfsIterative(int n, List<bool> visited, List<List<int>> edges) {
     // Fill adjacencyList with an entry for the number of nodes.
@@ -62,24 +59,22 @@ void main() {
       adjacencyList[edge[0]].add(edge[1]);
       adjacencyList[edge[1]].add(edge[0]);
     }
-    
+
     final queue = new ListQueue<int>.from([0]);
-    while(queue.isNotEmpty) {
+    while (queue.isNotEmpty) {
       int first = queue.removeFirst();
       if (visited[first]) return true;
       visited[first] = true;
-      
+
       for (int index in adjacencyList[first]) {
-        if (index != null) {
-          queue.addFirst(index);
-          adjacencyList[index].remove(first);
-        }
+        queue.addFirst(index);
+        adjacencyList[index].remove(first);
       }
     }
     return false;
   }
 
-  bool validTree(int n, List<List<int>> edges, {CheckCycle checkCycle}) {
+  bool validTree(int n, List<List<int>> edges, {CheckCycle? checkCycle}) {
     if (edges.length < 1) return false;
     final visited = new List<bool>.filled(n, false);
 
@@ -95,22 +90,65 @@ void main() {
 
   try {
     print('====== Depth First Search ======');
-    print(
-        'validTree1: ${validTree(5, [[0,1],[0,2],[0,3],[1,4]], checkCycle: dfs)}');
-    print('validTree2: ${validTree(5, [[0,1],[1,2],[2,3],[1,3],[1,4]])}');
-    print('validTree3: ${validTree(5, [[0,1],[0,2],[2,3],[2,4]])}');
-    print(
-        'validTree1: ${validTree(5, [[0,1],[0,2],[0,3],[1,4]], checkCycle: dfsIterative)}');
-    print('validTree2: ${validTree(5, [[0,1],[1,2],[2,3],[1,3],[1,4]], checkCycle: dfsIterative)}');
-    print('validTree3: ${validTree(5, [[0,1],[0,2],[2,3],[2,4]], checkCycle: dfsIterative)}');
+    print('validTree1: ${validTree(5, [
+          [0, 1],
+          [0, 2],
+          [0, 3],
+          [1, 4]
+        ], checkCycle: dfs)}');
+    print('validTree2: ${validTree(5, [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [1, 3],
+          [1, 4]
+        ])}');
+    print('validTree3: ${validTree(5, [
+          [0, 1],
+          [0, 2],
+          [2, 3],
+          [2, 4]
+        ])}');
+    print('validTree1: ${validTree(5, [
+          [0, 1],
+          [0, 2],
+          [0, 3],
+          [1, 4]
+        ], checkCycle: dfsIterative)}');
+    print('validTree2: ${validTree(5, [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [1, 3],
+          [1, 4]
+        ], checkCycle: dfsIterative)}');
+    print('validTree3: ${validTree(5, [
+          [0, 1],
+          [0, 2],
+          [2, 3],
+          [2, 4]
+        ], checkCycle: dfsIterative)}');
 
     print('===== Breadth First Search =====');
-    print(
-        'validTree1: ${validTree(5, [[0,1],[0,2],[0,3],[1,4]], checkCycle: bfs)}');
-    print(
-        'validTree2: ${validTree(5, [[0,1],[1,2],[2,3],[1,3],[1,4]], checkCycle: bfs)}');
-    print(
-        'validTree3: ${validTree(5, [[0,1],[0,2],[2,3],[2,4]], checkCycle: bfs)}');
+    print('validTree1: ${validTree(5, [
+          [0, 1],
+          [0, 2],
+          [0, 3],
+          [1, 4]
+        ], checkCycle: bfs)}');
+    print('validTree2: ${validTree(5, [
+          [0, 1],
+          [1, 2],
+          [2, 3],
+          [1, 3],
+          [1, 4]
+        ], checkCycle: bfs)}');
+    print('validTree3: ${validTree(5, [
+          [0, 1],
+          [0, 2],
+          [2, 3],
+          [2, 4]
+        ], checkCycle: bfs)}');
   } catch (e, st) {
     print(st);
   }

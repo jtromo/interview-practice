@@ -53,5 +53,15 @@ def main():
   x = {i: i * i for i in range(10) if i% 2 !=0}
   print(x)
 
+  print(f"\n- fill empty array -")
+  x: list[int] = [None for x in range(5)]
+  x[0] = 1
+  print(x)
+
+  print(f"\n- fill empty 2d array -")
+  x: list[list[int]] = [[None for x in range(5)] for x in range(5)]
+  x[0][0] = 1
+  print(x)
+
 if __name__ == '__main__':
   main()

@@ -88,26 +88,27 @@ def main():
           return True
     return False
 
+  print(f"\n\n== Depth-First Search ==")
   visited = set()
-  print("Depth-First Search Find 8 starting at 5")
+  print("Find 8 starting at 5")
   found = dfsFind(visited, graph, '5', '8')
   print(found)
 
-  print("Depth-First Search Find 8 starting at 7")
+  print("Find 8 starting at 7")
   found = dfsFind(visited, graph, '7', '8')
   print(found)
 
-  print("Depth-First Search Find 8 starting at 2")
+  print("Find 8 starting at 2")
   found = dfsFind(visited, graph, '2', '8')
   print(found)
 
   visited = set()
-  print("Depth-First Search Find 9 starting at 5")
+  print("Find 9 starting at 5")
   found = dfsFind(visited, graph, '5', '9')
   print(found)
 
 
-  print("== Edge list to adjacency list ==")
+  print(f"\n\n== Edge list to adjacency list ==")
 
   edges = [["i", "j"], ["k", "i"], ["m", "k"], ["k", "l"], ["o", "n"]]
 
@@ -132,8 +133,28 @@ def main():
   print("- Directed adjacency list -")
   print(convertToUndirectedAdjList(edges, False))
 
+  print(f"\n\n== Undirected Path ==")
+
   # cycles
 
+  def undirectedHasPath(graph: dict, src: str, dst: str, visited: set):
+    if src == dst:
+        return True
+
+    if src in visited:
+      return False
+
+    visited.add(src)
+
+    for neighbor in graph[src]:
+      if undirectedHasPath(graph, neighbor, dst, visited):
+        return True
+    return False
+
+  print("Undirected has path from k to o")
+  visited = set()
+  undirected = convertToUndirectedAdjList(edges, True)
+  print(undirectedHasPath(undirected, "k", "o", visited))
 
 if __name__ == '__main__':
   main()

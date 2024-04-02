@@ -1,17 +1,15 @@
-import 'dart:io';
-
 class Node {
-  Node next;
+  Node? next;
   int value;
 
   Node(this.value);
-  
+
   @override
   String toString() {
-    Node pointer = this;
+    Node? pointer = this;
     var output = '';
-    while(pointer != null) {
-      output+='${pointer.value}->';
+    while (pointer != null) {
+      output += '${pointer.value}->';
       pointer = pointer.next;
     }
     return output;
@@ -136,10 +134,10 @@ void main() {
     return node1;
   }
 
-  Node reverseLinkedList(Node node) {
+  Node reverseLinkedList(Node? node) {
     var temp, reversed;
     var current = node;
-    while(current != null) {
+    while (current != null) {
       temp = current;
       current = current.next;
       temp.next = reversed;
@@ -147,13 +145,13 @@ void main() {
     }
     return reversed;
   }
-  
-  Node reverseLinkedListRecursive(Node head, Node newHead) {
+
+  Node? reverseLinkedListRecursive(Node? head, Node? newHead) {
     if (head == null) {
       return newHead;
     }
-    
-    var temp, current;
+
+    var temp;
     temp = head;
     head = head.next;
     temp.next = newHead;

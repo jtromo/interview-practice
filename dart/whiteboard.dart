@@ -1,4 +1,4 @@
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 
 void main() {
 // https://stackoverflow.com/questions/72176047/debug-current-open-flutter-file-in-vscode
@@ -71,13 +71,13 @@ void main() {
 
   /// In accordance with ISO 8601
   /// a week starts with Monday, which has the value 1.
-  int btWeekdayForIsoWeekday(int weekday) {
-    if (weekday == 7) {
-      // Sunday
-      return 0;
-    }
-    return weekday;
-  }
+  // int btWeekdayForIsoWeekday(int weekday) {
+  //   if (weekday == 7) {
+  //     // Sunday
+  //     return 0;
+  //   }
+  //   return weekday;
+  // }
 
   // Week day methods
 
