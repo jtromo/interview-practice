@@ -8,11 +8,9 @@ void main() {
   Map<int, List<int>> amoMap = {};
 
   int firstIndexHigherThanTemp(int currentTemp, int startIndex) {
-    List<int> keysGreaterThanCurrent =
-        amoMap.keys.where((int key) => key >= currentTemp).toList()..sort();
+    List<int> keysGreaterThanCurrent = amoMap.keys.where((int key) => key >= currentTemp).toList()..sort();
     for (int key in keysGreaterThanCurrent) {
-      
-      int firstGreaterIndex = amoMap[key].firstWhere((index) => index > startIndex, orElse: () => -1);
+      int firstGreaterIndex = amoMap[key]?.firstWhere((index) => index > startIndex, orElse: () => -1) ?? -1;
       if (firstGreaterIndex != -1) {
         return firstGreaterIndex;
       }
@@ -21,8 +19,7 @@ void main() {
     return -1;
   }
 
-  int warmerTemp(
-      int currentTemp, int startIndex, int length, List<int> temperatures) {
+  int warmerTemp(int currentTemp, int startIndex, int length, List<int> temperatures) {
     int amoIndex = firstIndexHigherThanTemp(currentTemp, startIndex);
     if (amoIndex != -1) {
       return amoIndex - startIndex;
@@ -33,8 +30,8 @@ void main() {
     for (int i = startIndex; i < length; i++) {
       distance++;
       if (temperatures[i] > currentTemp) {
-        List<int> currentList = amoMap[currentTemp];
-        currentList ??= new List<int>();
+        List<int>? currentList = amoMap[currentTemp];
+        currentList ??= [];
         currentList.add(i);
         amoMap[currentTemp] = currentList;
         return distance;
@@ -45,7 +42,7 @@ void main() {
   }
 
   List<int> dailyTemperatures(List<int> temperatures) {
-    List<int> warmer = new List<int>(temperatures.length);
+    List<int> warmer = List.filled(temperatures.length, 0);
     int length = temperatures.length;
 
     for (int i = 0; i < temperatures.length; i++) {
@@ -57,8 +54,7 @@ void main() {
   }
 
   try {
-    print(
-        'dailyTemperatures: ${dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])}');
+    print('dailyTemperatures: ${dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])}');
     print('amoMap: ${amoMap}');
   } catch (e, st) {
     print(e);

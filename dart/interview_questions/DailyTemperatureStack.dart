@@ -7,24 +7,23 @@ import 'dart:collection';
 
 void main() {
   List<int> dailyTemperatures(List<int> temperatures) {
-    var warmer = new List<int>(temperatures.length);
+    var warmer = List.filled(temperatures.length, 0);
     // Index of current warmer temp.
     var stack = new Queue<int>();
-    
-    for (int i=temperatures.length-1; i>=0; i--) {
+
+    for (int i = temperatures.length - 1; i >= 0; i--) {
       while (!stack.isEmpty && temperatures[i] >= temperatures[stack.first]) {
         stack.removeFirst();
       }
-      warmer[i] = stack.isEmpty ? 0 : stack.first-i;
+      warmer[i] = stack.isEmpty ? 0 : stack.first - i;
       stack.addFirst(i);
     }
-    
+
     return warmer;
   }
 
   try {
-    print(
-        'dailyTemperatures: ${dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])}');
+    print('dailyTemperatures: ${dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73])}');
   } catch (e, st) {
     print(e);
     print(st);

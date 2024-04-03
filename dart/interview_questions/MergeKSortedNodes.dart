@@ -64,14 +64,14 @@ Node? mergeKlists(List<Node?> lists) {
   if (lists.isEmpty) return null;
   ListQueue queue = new ListQueue.from(lists);
 
-  var head = lists.first;
-  var prev = head;
+  Node? head = lists.first;
+  Node? prev = head;
   while (queue.isNotEmpty) {
     Node? list = queue.removeFirst();
-    var temp = list;
-    list = list.next;
-    prev.next = temp;
-    prev = prev.next;
+    Node? temp = list;
+    list = list?.next;
+    prev?.next = temp;
+    prev = prev?.next;
     if (list != null) {
       queue.addLast(list);
     }
