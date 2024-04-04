@@ -1,4 +1,4 @@
-
+# https://neetcode.io/problems/adapter
 
 # Adapter Pattern
 # Implement the Adapter design pattern.

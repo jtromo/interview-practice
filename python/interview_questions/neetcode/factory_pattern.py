@@ -1,3 +1,5 @@
+# https://neetcode.io/problems/factory
+
 # Factory Method Pattern
 # Implement the Factory Method design pattern.
 
