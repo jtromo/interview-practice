@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"codeium.enableCodeLens": false,
+		"codium.enable": false,
+		"codeium.enableCommandSideHintEducation": false,
+		"codeium.enableExplainProblem": false,
+		"codeium.enableInComments": false,
+		"codium.editorButton": false
+	}
 }
