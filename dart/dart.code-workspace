@@ -10,6 +10,10 @@
 		"codeium.enableCommandSideHintEducation": false,
 		"codeium.enableExplainProblem": false,
 		"codeium.enableInComments": false,
-		"codium.editorButton": false
+		"codium.editorButton": false,
+		"codeium.enableSearch": false,
+		"codeium.enableConfig": {
+			"*": false
+		}
 	}
 }
