@@ -42,20 +42,17 @@ class Solution {
   }
 
   List<int> productExceptSelfMemory(List<int> nums) {
-    prefix
-    Postfix
-
+    // prefix
+    // Postfix
 
     var answer = <int>[];
     var product = 1;
-    for (final (index, value) in nums.indexed) {
+    for (final (_, value) in nums.indexed) {
       product = product * value;
     }
 
-    for (final (index, value) in nums.indexed) {
-      if (value == 0) {
-
-      }
+    for (final (_, value) in nums.indexed) {
+      if (value == 0) {}
       answer.add(product ~/ value);
     }
     return answer;
@@ -63,6 +60,6 @@ class Solution {
 }
 
 void main() {
-  print("Input 1: ${Solution().productExceptSelfDivision([1, 2, 3, 4])}");
-  print("Input 2: ${Solution().productExceptSelfDivision([-1, 1, 0, -3, 3])}");
+  // print("Input 1: ${Solution().productExceptSelfDivision([1, 2, 3, 4])}");
+  // print("Input 2: ${Solution().productExceptSelfDivision([-1, 1, 0, -3, 3])}");
 }
