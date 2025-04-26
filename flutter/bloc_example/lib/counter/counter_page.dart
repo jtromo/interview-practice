@@ -46,10 +46,10 @@ class CounterPage extends StatefulWidget {
 }
 
 class _CounterPageState extends State<CounterPage> {
-  late CounterBloc _counterBloc;
-  late CounterCubit _counterCubit;
   late int _stateCount;
+  late CounterBloc _counterBloc;
   late int _blocCount;
+  late CounterCubit _counterCubit;
   late int _cubitCount;
 
   final _stateManagerOptions = <StateManager>[StateManager.state, StateManager.bloc, StateManager.cubit];
@@ -139,9 +139,6 @@ class _CounterPageState extends State<CounterPage> {
         ],
         child: Center(
           child: Column(
-            // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
-            // action in the IDE, or press "p" in the console), to see the
-            // wireframe for each widget.
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               DropdownButton(

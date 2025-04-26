@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'BLoC Example',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
@@ -22,11 +23,11 @@ class MyApp extends StatelessWidget {
       home: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (context) => CounterCubit(),
+            create: (context) => CounterBloc(),
           ),
           BlocProvider(
-            create: (context) => CounterBloc(),
-          )
+            create: (context) => CounterCubit(),
+          ),
         ],
         child: const CounterPage(title: 'Counter Page'),
       ),
