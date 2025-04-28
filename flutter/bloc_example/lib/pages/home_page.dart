@@ -1,5 +1,7 @@
-import 'package:bloc_example/counter/bloc/counter_bloc.dart';
-import 'package:bloc_example/counter/cubit/counter_cubit.dart';
+import 'package:bloc_example/bloc/counter/counter_bloc.dart';
+import 'package:bloc_example/bloc/counter/counter_state.dart';
+import 'package:bloc_example/bloc/counter/counter_cubit.dart';
+import 'package:bloc_example/bloc/theme/theme_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -51,6 +53,7 @@ class _CounterPageState extends State<CounterPage> {
   late int _blocCount;
   late CounterCubit _counterCubit;
   late int _cubitCount;
+  late ThemeCubit _themeCubit;
 
   final _stateManagerOptions = <StateManager>[StateManager.state, StateManager.bloc, StateManager.cubit];
   var _selectedStateManager = StateManager.state;
@@ -108,6 +111,7 @@ class _CounterPageState extends State<CounterPage> {
     super.initState();
     _counterBloc = context.read<CounterBloc>();
     _counterCubit = context.read<CounterCubit>();
+    _themeCubit = context.read<ThemeCubit>();
     _stateCount = 0;
     _blocCount = 0;
     _cubitCount = 0;
@@ -194,6 +198,12 @@ class _CounterPageState extends State<CounterPage> {
             onPressed: _resetCounter,
             tooltip: 'Reset',
             child: const Icon(Icons.refresh),
+          ),
+          const SizedBox(height: 10),
+          FloatingActionButton(
+            onPressed: _themeCubit.randomTheme,
+            tooltip: 'Random Theme',
+            child: const Icon(Icons.palette),
           ),
         ],
       ),

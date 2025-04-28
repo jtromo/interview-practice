@@ -1,4 +1,4 @@
-part of 'counter_bloc.dart';
+import 'package:flutter/material.dart';
 
 @immutable
 sealed class CounterState {
