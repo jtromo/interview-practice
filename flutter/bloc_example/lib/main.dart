@@ -33,7 +33,7 @@ class BlocApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             title: 'BLoC State Management',
             theme: state.theme,
-            home: const CounterPage(title: 'BLoC Example'),
+            home: const HomePage(title: 'BLoC Example'),
           );
         },
       ),

@@ -2,52 +2,20 @@ import 'package:bloc_example/bloc/counter/counter_bloc.dart';
 import 'package:bloc_example/bloc/counter/counter_state.dart';
 import 'package:bloc_example/bloc/counter/counter_cubit.dart';
 import 'package:bloc_example/bloc/theme/theme_cubit.dart';
+import 'package:bloc_example/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum StateManager {
-  state,
-  bloc,
-  cubit;
-
-  static StateManager fromString(String? managerString) {
-    if (managerString == null) {
-      return StateManager.state;
-    }
-    if (managerString == StateManager.state.toString()) {
-      return StateManager.state;
-    } else if (managerString == StateManager.bloc.toString()) {
-      return StateManager.bloc;
-    } else if (managerString == StateManager.cubit.toString()) {
-      return StateManager.cubit;
-    } else {
-      return StateManager.state;
-    }
-  }
-
-  @override
-  String toString() {
-    switch (this) {
-      case StateManager.state:
-        return "State";
-      case StateManager.bloc:
-        return "BLoC";
-      case StateManager.cubit:
-        return "Cubit";
-    }
-  }
-}
-
-class CounterPage extends StatefulWidget {
-  const CounterPage({super.key, required this.title});
+class HomePage extends StatefulWidget {
+  const HomePage({super.key, required this.title});
 
   final String title;
 
   @override
-  State<CounterPage> createState() => _CounterPageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _CounterPageState extends State<CounterPage> {
+class _HomePageState extends State<HomePage> {
   late int _stateCount;
   late CounterBloc _counterBloc;
   late int _blocCount;

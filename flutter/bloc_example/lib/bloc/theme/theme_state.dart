@@ -1,9 +1,5 @@
+import 'package:bloc_example/utils/constants.dart';
 import 'package:flutter/material.dart';
-
-var defaultTheme = ThemeData(
-  colorScheme: ColorScheme.fromSeed(seedColor: Colors.cyan),
-  useMaterial3: true,
-);
 
 @immutable
 sealed class ThemeState {

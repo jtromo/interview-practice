@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:provider_example/utils.dart';
+import 'package:provider_example/utils/constants.dart';
+import 'package:provider_example/utils/utils.dart';
 
 class ThemeProvider extends ChangeNotifier {
   late ThemeData theme;
 
   ThemeProvider({ThemeData? initialTheme}) {
     if (initialTheme == null) {
-      theme = ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueGrey),
-        useMaterial3: true,
-      );
+      theme = defaultTheme;
     } else {
       theme = initialTheme;
     }
