@@ -10,6 +10,6 @@ final class CounterInitial extends CounterState {
   const CounterInitial();
 }
 
-final class CounterStateUpdated extends CounterState {
-  const CounterStateUpdated({required super.count});
+final class CounterUpdated extends CounterState {
+  const CounterUpdated({required super.count});
 }
