@@ -1,6 +1,6 @@
 # provider_example
 
-A new Flutter project.
+Provider example Flutter project.
 
 ## Getting Started
 

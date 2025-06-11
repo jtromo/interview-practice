@@ -1,6 +1,6 @@
 # riverpod_example
 
-A new Flutter project.
+Riverpod example Flutter project.
 
 ## Getting Started
 
